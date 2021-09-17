@@ -1,0 +1,232 @@
+@charset "utf-8";
+
+
+@font-face {
+    font-family: "Star Wars";
+    src: url("imagens/StarWars.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+    background: black url('imagens/starwars_background.jpeg') no-repeat fixed center;
+}
+
+.container-init {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 480px;
+}
+.container-init > .container-img-init {
+    width: 360px;
+    height: 250px;
+    position: absolute;
+    top: 21%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url("imagens/Logo-Amarelo-Star-Wars-PNG.png") no-repeat center ;
+    background-size: 100%;
+    opacity: 1;
+    animation: AnimationOpacity 1.7s forwards;
+    transition: 1s;
+}
+.container-about {
+    width: 100%;
+    height: 100%;
+    padding: 180px 50px 50px 50px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0);
+    animation: BackgroundInitAbout 1s forwards linear;
+}
+.border-visual-one, .border-visual-two {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0px;
+}
+.border-visual-one {
+    height: 100%;
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    animation: BorderOne 1.2s forwards;
+}
+.border-visual-two {
+    width: 100%;
+    border-right: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    animation: BorderTwo 1.2s forwards;
+}
+
+.colum-two {
+    width: 500px;
+    margin-left: 15px;
+}
+.colum-one, .colum-two {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    z-index: 10;
+    opacity: 0;
+    animation: AnimationOpacity 1.7s forwards;
+}
+.container-p > p {
+    color: white;
+    height: 180px;
+    text-align: justify;
+    font: 1.5em monospace;
+    padding-top: 25px;
+}
+.container-img-about {
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid #ffffff;  
+}
+.container-img-about > img{
+    width: 100%;
+}
+.social-medias {
+    margin-top: 10px;
+    padding: 10px 0 0 20px;
+    height: 50px;
+}
+.social-medias > a {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.container-about-btn {
+    margin-top: 10px;
+    text-align: center;
+}
+.container-about-btn > button, .container-btn-skip > button {
+    width: 320px;
+    height: 50px;
+    font: 2em monospace;
+    border: 3px solid #E1B100;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+    transition: 1s;
+}
+.container-about-btn > button::before, .container-btn-skip > button::before {
+    content: "";
+    width: 110%;
+    height: 0%;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #E1B100;
+    transition: 0.7s ease;
+    z-index: -1;
+    border-radius: 50%;
+}
+.container-btn-skip > button::before {
+    background: rgb(180, 180, 180);
+}
+.container-about-btn > button:hover, .container-btn-skip > button:hover {
+    color: black;
+}
+.container-about-btn > button:hover::before, .container-btn-skip > button:hover::before {
+    height: 500%;
+}
+.ContainerCredits {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: none;
+    animation: CinematicTransitionOpen 1s forwards;
+}
+.ContainerCredits > span {
+    font: 2em monospace;
+    color: white; 
+}
+
+.container-btn-skip {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: none;
+    animation: CinematicTransitionOpen 1s forwards;
+}
+.container-btn-skip > button {
+    border: 3px solid white;
+}
+
+
+
+.container-sabre {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform:  translate(-50%, -50%);
+    width: 40px;
+    height: 160px;
+    display: none;
+    animation: AnimationInitSaber 1s forwards;
+}
+
+.container-sabre > div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.container-img {
+    width: 100%;
+    height: 100%;
+    background: url("imagens/Base_sabre_de_luz.png");
+    cursor: pointer;
+}
+.container-lamina-luz {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 0px;
+    border-radius: 50px;
+    background: #ffffff;
+    box-shadow: 0px 0px 15px 8px rgb(0, 255, 34);
+    z-index: -1;
+    display: none;
+    transition: 0.3s;
+}
+
+.Border-Input-Color {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    border: 3px solid #4e4e4e;
+    border-radius: 20px;
+}
+.Border-Input-Color > input {
+    margin: -10px 0 0 -10px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    background-color: black;
+}
